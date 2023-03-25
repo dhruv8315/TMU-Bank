@@ -4,6 +4,7 @@
  */
 package com.mycompany.tmubank;
 
+import com.mycompany.tmubank.BankDatabase.DatabaseCon;
 import java.util.ArrayList;
 /**
  *
@@ -16,12 +17,12 @@ public class Account {
     private ArrayList<Transaction> transactionHistory;
     /**
      * parameterized constructor initialize the variable
-     * @param u
      * @param accountType
+     * *@param balance
      */
-    public Account(User u, String accountType) {
-        U = u;
+    public Account(String accountType) {
         this.accountType = accountType;
+        this.balance = 0;
         this.transactionHistory = new ArrayList<>();
     }
 
@@ -49,10 +50,13 @@ public class Account {
         this.transactionHistory = transactionHistory;
     }
 
-    public void deposit(double amount){
-        balance += amount;
+    public boolean deposit(double amount){
+        DatabaseCon dbcon = new DatabaseCon();
+        this.balance += amount;
         Transaction transaction = new Transaction(amount,"Deposit");
         this.transactionHistory.add(transaction);
+        
+        return dbcon.depositUser(this,getU());
     }
 
     public void withdraw(double amount) {

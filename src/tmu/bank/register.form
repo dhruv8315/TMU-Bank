@@ -60,11 +60,11 @@
                                   <Component id="ID" max="32767" attributes="0"/>
                                   <Component id="IDN" alignment="0" max="32767" attributes="0"/>
                                   <Component id="ACC" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="email" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="registerTextEmail" alignment="0" max="32767" attributes="0"/>
                                   <Component id="PHN" alignment="0" max="32767" attributes="0"/>
                                   <Component id="DOB" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="user" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="pass" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="registerTextUsername" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="registerTextPassword" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -80,7 +80,7 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="225" max="-2" attributes="0"/>
+              <Component id="registerBtnSubmit" min="-2" pref="225" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -113,7 +113,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="email" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="registerTextEmail" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -128,15 +128,15 @@
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="user" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="registerTextUsername" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="pass" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="registerTextPassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="registerBtnSubmit" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -197,7 +197,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
-        <Property name="text" type="java.lang.String" value="UserName"/>
+        <Property name="text" type="java.lang.String" value="Username"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
@@ -205,13 +205,17 @@
         <Property name="text" type="java.lang.String" value="Password"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="registerBtnSubmit">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Gill Sans Nova" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Register"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="registerBtnSubmitMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registerBtnSubmitActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="ID">
       <Events>
@@ -228,9 +232,9 @@
         <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="ACCAncestorAdded"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="email">
+    <Component class="javax.swing.JTextField" name="registerTextEmail">
       <Events>
-        <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="emailAncestorAdded"/>
+        <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="registerTextEmailAncestorAdded"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="PHN">
@@ -244,14 +248,14 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DOBActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="user">
+    <Component class="javax.swing.JTextField" name="registerTextUsername">
       <Events>
-        <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="userAncestorAdded"/>
+        <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="registerTextUsernameAncestorAdded"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="pass">
+    <Component class="javax.swing.JPasswordField" name="registerTextPassword">
       <Events>
-        <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="passAncestorAdded"/>
+        <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="registerTextPasswordAncestorAdded"/>
       </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox1">

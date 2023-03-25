@@ -16,11 +16,11 @@ public class Chequing extends Account{
     /**
      * parameterized constructor initialize the variable
      *
-     * @param u
+     * 
      * @param accountType
      */
     public Chequing(User u, String accountType) {
-        super(u, accountType);
+        super("Chequing");
         this.chequingDespoit = 0;
         this.chequingWithdraw = 0;
     }

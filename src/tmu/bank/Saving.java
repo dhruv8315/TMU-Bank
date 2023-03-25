@@ -19,7 +19,7 @@ public class Saving extends Account{
      * @param accountType
      */
     public Saving(User u, String accountType) {
-        super(u, "Saving");
+        super("Saving");
     }
 
     /**

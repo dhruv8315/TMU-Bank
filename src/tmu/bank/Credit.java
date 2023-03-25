@@ -19,7 +19,7 @@ public class Credit extends Account{
      * @param accountType
      */
     public Credit(User u, String accountType) {
-        super(u, "Credit");
+        super("Credit");
     }
 
     public void PayBills(){

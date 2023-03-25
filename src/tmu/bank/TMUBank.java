@@ -8,9 +8,10 @@ package com.mycompany.tmubank;
  *
  * @author Kris
  */
-public class TMUBank {
+public class TMUBank{
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        loginpage login = new loginpage();
+	login.setVisible(true);
     }
 }

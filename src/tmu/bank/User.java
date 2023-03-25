@@ -4,6 +4,11 @@
  */
 package com.mycompany.tmubank;
 
+import java.sql.Connection;
+import com.mycompany.tmubank.BankDatabase.DatabaseCon;
+import java.sql.SQLException;
+import java.sql.*;
+
 /**
  *
  * @author dhruv
@@ -15,6 +20,15 @@ public class User {
     private String userID;
     private String userPassword;
 
+    /**
+     * Parameterized constructor which initialize the variable
+     * @param userUsername
+     * @param userPassword
+     */
+    public User(String userUsername,String userPassword){
+        this.userUsername = userUsername;
+        this.userPassword = userPassword;
+    }
     /**
      * Parameterized constructor which initialize the variable
      * @param userUsername
@@ -91,5 +105,23 @@ public class User {
      */
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
+    }
+    
+    /*
+    *   Check for existing user into database
+    */
+    public boolean login(){
+        DatabaseCon dbcon = new DatabaseCon();
+        
+        return dbcon.loginUser(this);
+    }
+    
+    /*
+    * register the new user into database
+    */
+    public boolean register(){
+      DatabaseCon dbcon = new DatabaseCon();
+      return dbcon.registerUser(this);
+      
     }
 }

@@ -1,5 +1,5 @@
 package com.mycompany.tmubank;
-
+import javax.swing.*;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -37,15 +37,15 @@ public class register extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        registerBtnSubmit = new javax.swing.JButton();
         ID = new javax.swing.JTextField();
         IDN = new javax.swing.JTextField();
         ACC = new javax.swing.JTextField();
-        email = new javax.swing.JTextField();
+        registerTextEmail = new javax.swing.JTextField();
         PHN = new javax.swing.JTextField();
         DOB = new javax.swing.JTextField();
-        user = new javax.swing.JTextField();
-        pass = new javax.swing.JPasswordField();
+        registerTextUsername = new javax.swing.JTextField();
+        registerTextPassword = new javax.swing.JPasswordField();
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,12 +74,22 @@ public class register extends javax.swing.JFrame {
 
         jLabel8.setText("Date of Birth");
 
-        jLabel9.setText("UserName");
+        jLabel9.setText("Username");
 
         jLabel10.setText("Password");
 
-        jButton1.setFont(new java.awt.Font("Gill Sans Nova", 1, 14)); // NOI18N
-        jButton1.setText("Register");
+        registerBtnSubmit.setFont(new java.awt.Font("Gill Sans Nova", 1, 14)); // NOI18N
+        registerBtnSubmit.setText("Register");
+        registerBtnSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registerBtnSubmitMouseClicked(evt);
+            }
+        });
+        registerBtnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerBtnSubmitActionPerformed(evt);
+            }
+        });
 
         ID.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -111,9 +121,9 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        email.addAncestorListener(new javax.swing.event.AncestorListener() {
+        registerTextEmail.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                emailAncestorAdded(evt);
+                registerTextEmailAncestorAdded(evt);
             }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -146,9 +156,9 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        user.addAncestorListener(new javax.swing.event.AncestorListener() {
+        registerTextUsername.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                userAncestorAdded(evt);
+                registerTextUsernameAncestorAdded(evt);
             }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -156,9 +166,9 @@ public class register extends javax.swing.JFrame {
             }
         });
 
-        pass.addAncestorListener(new javax.swing.event.AncestorListener() {
+        registerTextPassword.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                passAncestorAdded(evt);
+                registerTextPasswordAncestorAdded(evt);
             }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -202,11 +212,11 @@ public class register extends javax.swing.JFrame {
                                     .addComponent(ID)
                                     .addComponent(IDN)
                                     .addComponent(ACC)
-                                    .addComponent(email)
+                                    .addComponent(registerTextEmail)
                                     .addComponent(PHN)
                                     .addComponent(DOB)
-                                    .addComponent(user)
-                                    .addComponent(pass))
+                                    .addComponent(registerTextUsername)
+                                    .addComponent(registerTextPassword))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
@@ -215,7 +225,7 @@ public class register extends javax.swing.JFrame {
                                 .addGap(18, 18, 18))))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(101, 101, 101)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(registerBtnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -242,7 +252,7 @@ public class register extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(registerTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -254,13 +264,13 @@ public class register extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(registerTextUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(registerTextPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
-                .addComponent(jButton1)
+                .addComponent(registerBtnSubmit)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -283,9 +293,9 @@ public class register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ACCAncestorAdded
 
-    private void emailAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_emailAncestorAdded
+    private void registerTextEmailAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_registerTextEmailAncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailAncestorAdded
+    }//GEN-LAST:event_registerTextEmailAncestorAdded
 
     private void PHNAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_PHNAncestorAdded
         // TODO add your handling code here:
@@ -295,13 +305,13 @@ public class register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DOBAncestorAdded
 
-    private void userAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_userAncestorAdded
+    private void registerTextUsernameAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_registerTextUsernameAncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_userAncestorAdded
+    }//GEN-LAST:event_registerTextUsernameAncestorAdded
 
-    private void passAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_passAncestorAdded
+    private void registerTextPasswordAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_registerTextPasswordAncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_passAncestorAdded
+    }//GEN-LAST:event_registerTextPasswordAncestorAdded
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
@@ -309,6 +319,35 @@ public class register extends javax.swing.JFrame {
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void registerBtnSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBtnSubmitMouseClicked
+        // TODO add your handling code here:
+        String username = registerTextUsername.getText();
+        String email = registerTextEmail.getText();
+        String password = registerTextPassword.getText();
+        User obj = new User(username,email,password);
+        
+    }//GEN-LAST:event_registerBtnSubmitMouseClicked
+
+    private void registerBtnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnSubmitActionPerformed
+        // TODO add your handling code here:
+        // get the value from the form 
+        String username = registerTextUsername.getText();
+        String email = registerTextEmail.getText();
+        String password = registerTextPassword.getText();
+        
+        
+        User obj = new User(username,email,password);
+        if(obj.register()==true){
+            dashboard dss = new dashboard();
+            dss.setVisible(true);
+            dispose();
+        }
+        else{
+            System.out.println("Something went wrong!");
+            JOptionPane.showMessageDialog(null,"Something went wrong!","Title",1);
+        }
+    }//GEN-LAST:event_registerBtnSubmitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -351,8 +390,6 @@ public class register extends javax.swing.JFrame {
     private javax.swing.JTextField ID;
     private javax.swing.JTextField IDN;
     private javax.swing.JTextField PHN;
-    private javax.swing.JTextField email;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -364,7 +401,9 @@ public class register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPasswordField pass;
-    private javax.swing.JTextField user;
+    private javax.swing.JButton registerBtnSubmit;
+    private javax.swing.JTextField registerTextEmail;
+    private javax.swing.JPasswordField registerTextPassword;
+    private javax.swing.JTextField registerTextUsername;
     // End of variables declaration//GEN-END:variables
 }

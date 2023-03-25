@@ -1,5 +1,7 @@
 package com.mycompany.tmubank;
 
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -29,9 +31,9 @@ public class loginpage extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        password = new javax.swing.JPasswordField();
-        username = new javax.swing.JFormattedTextField();
-        jButton1 = new javax.swing.JButton();
+        loginpagePasswordFeild = new javax.swing.JPasswordField();
+        loginpageTextFeild = new javax.swing.JFormattedTextField();
+        loginpageBtnSubmit = new javax.swing.JButton();
         FP = new javax.swing.JButton();
         register = new javax.swing.JLabel();
 
@@ -41,18 +43,28 @@ public class loginpage extends javax.swing.JFrame {
 
         jLabel2.setText("Password");
 
-        username.addMouseListener(new java.awt.event.MouseAdapter() {
+        loginpageTextFeild.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                usernameMouseClicked(evt);
+                loginpageTextFeildMouseClicked(evt);
             }
         });
-        username.addActionListener(new java.awt.event.ActionListener() {
+        loginpageTextFeild.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameActionPerformed(evt);
+                loginpageTextFeildActionPerformed(evt);
             }
         });
 
-        jButton1.setText("LOGIN");
+        loginpageBtnSubmit.setText("LOGIN");
+        loginpageBtnSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginpageBtnSubmitMouseClicked(evt);
+            }
+        });
+        loginpageBtnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginpageBtnSubmitActionPerformed(evt);
+            }
+        });
 
         FP.setText("Forgot Password");
         FP.addActionListener(new java.awt.event.ActionListener() {
@@ -83,11 +95,11 @@ public class loginpage extends javax.swing.JFrame {
                                     .addComponent(jLabel2))
                                 .addGap(96, 96, 96)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(loginpageTextFeild, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(FP, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(password, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(loginpagePasswordFeild, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(loginpageBtnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(276, 276, 276)
                         .addComponent(register)))
@@ -99,15 +111,15 @@ public class loginpage extends javax.swing.JFrame {
                 .addGap(111, 111, 111)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(loginpageTextFeild, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(loginpagePasswordFeild, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FP)
                 .addGap(19, 19, 19)
-                .addComponent(jButton1)
+                .addComponent(loginpageBtnSubmit)
                 .addGap(8, 8, 8)
                 .addComponent(register)
                 .addContainerGap(104, Short.MAX_VALUE))
@@ -116,17 +128,17 @@ public class loginpage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
+    private void loginpageTextFeildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginpageTextFeildActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameActionPerformed
+    }//GEN-LAST:event_loginpageTextFeildActionPerformed
 
     private void FPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FPActionPerformed
 
-    private void usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameMouseClicked
+    private void loginpageTextFeildMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginpageTextFeildMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameMouseClicked
+    }//GEN-LAST:event_loginpageTextFeildMouseClicked
 
     private void registerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerMouseClicked
         // TODO add your handling code here:
@@ -134,6 +146,30 @@ public class loginpage extends javax.swing.JFrame {
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_registerMouseClicked
+
+    private void loginpageBtnSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginpageBtnSubmitMouseClicked
+        // TODO add your handling code here:
+        String username = loginpageTextFeild.getText();
+        String password = loginpagePasswordFeild.getText();
+        //User obj = new User();
+    }//GEN-LAST:event_loginpageBtnSubmitMouseClicked
+
+    private void loginpageBtnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginpageBtnSubmitActionPerformed
+        // TODO add your handling code here:
+        String username = loginpageTextFeild.getText();
+        String password = loginpagePasswordFeild.getText();
+        User obj = new User(username,password);
+        
+        if(obj.login() == true){
+            dashboard dss = new dashboard();
+            dss.setVisible(true);
+            dispose();
+        }
+        else{
+            System.out.println("Something went wrong!");
+            JOptionPane.showMessageDialog(null,"Something went wrong!","Error",1);
+        }
+    }//GEN-LAST:event_loginpageBtnSubmitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,11 +208,11 @@ public class loginpage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton FP;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPasswordField password;
+    private javax.swing.JButton loginpageBtnSubmit;
+    private javax.swing.JPasswordField loginpagePasswordFeild;
+    private javax.swing.JFormattedTextField loginpageTextFeild;
     private javax.swing.JLabel register;
-    private javax.swing.JFormattedTextField username;
     // End of variables declaration//GEN-END:variables
 }
