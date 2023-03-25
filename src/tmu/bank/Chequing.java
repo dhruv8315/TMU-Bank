@@ -20,7 +20,9 @@ public class Chequing extends Account{
      * @param accountType
      */
     public Chequing(User u, String accountType) {
-        super(u, "Chequing");
+        super(u, accountType);
+        this.chequingDespoit = 0;
+        this.chequingWithdraw = 0;
     }
 
     /**
