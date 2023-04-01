@@ -112,7 +112,6 @@ public class User {
     */
     public boolean login(){
         DatabaseCon dbcon = new DatabaseCon();
-        
         return dbcon.loginUser(this);
     }
     

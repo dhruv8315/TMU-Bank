@@ -12,6 +12,6 @@ public class TMUBank{
 
     public static void main(String[] args) {
         loginpage login = new loginpage();
-	login.setVisible(true);
+        login.setVisible(true);
     }
 }

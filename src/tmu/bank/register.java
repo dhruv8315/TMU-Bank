@@ -100,6 +100,11 @@ public class register extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
+        ID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IDActionPerformed(evt);
+            }
+        });
 
         IDN.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -348,6 +353,10 @@ public class register extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Something went wrong!","Title",1);
         }
     }//GEN-LAST:event_registerBtnSubmitActionPerformed
+
+    private void IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IDActionPerformed
 
     /**
      * @param args the command line arguments

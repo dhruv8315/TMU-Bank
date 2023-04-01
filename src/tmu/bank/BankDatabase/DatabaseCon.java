@@ -55,19 +55,26 @@ public class DatabaseCon {
         String dbPassword = null;
         String uname = u.getUserUsername();
         String pass = u.getUserPassword();
-        String select = "SELECT username FROM Users WHERE username = '" + uname + "';";
+        String select = "SELECT username, password FROM users WHERE username = '" + uname + "' and password = '" + pass + "';";
         try {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(select);
 
-            while (rs.next()) {
+            if(rs.next()) {
+                
                 dbUsername = rs.getString("username");
                 dbPassword = rs.getString("password");
                 if (uname.equals(dbUsername) && (pass).equals(dbPassword)) {
+                    System.out.println("User found");
                     return true;
+                }
+                else{
+                    return false;
                 }
             }
         } catch (Exception e) {
+            System.out.println("No user found");
+            e.printStackTrace();
         }
         return false;
     }
@@ -87,7 +94,7 @@ public class DatabaseCon {
         String uname = u.getUserUsername();
         String pass = u.getUserPassword();
         String email = u.getUserEmail();
-        String insert = "INSERT INTO Users(username, password, email) VALUES ('" + uname + "','" + pass + "','" + email + "');";
+        String insert = "INSERT INTO users(username, password, email) VALUES ('" + uname + "','" + pass + "','" + email + "');";
         try {
             PreparedStatement st = con.prepareStatement(insert);
 
@@ -104,7 +111,7 @@ public class DatabaseCon {
     }
     public int returnUserID(User u){
         int idNumber = 0;
-        String query = "SELECT id FROM Users WHERE username = '"+u.getUserUsername()+"'";
+        String query = "SELECT id FROM users WHERE username = '"+u.getUserUsername()+"'";
         
         try{
             PreparedStatement st = con.prepareStatement(query);

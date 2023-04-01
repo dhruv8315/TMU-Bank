@@ -220,6 +220,7 @@
     <Component class="javax.swing.JTextField" name="ID">
       <Events>
         <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="IDAncestorAdded"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IDActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="IDN">
