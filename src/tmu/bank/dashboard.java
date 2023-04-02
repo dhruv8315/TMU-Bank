@@ -1,5 +1,7 @@
 package com.mycompany.tmubank;
 
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -27,7 +29,7 @@ public class dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        logOutBtn = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Deposit = new javax.swing.JButton();
         Withdraw = new javax.swing.JButton();
@@ -37,7 +39,12 @@ public class dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("LOGOUT");
+        logOutBtn.setText("LOGOUT");
+        logOutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logOutBtnMouseClicked(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel2.setText("DASHBOARD");
@@ -96,7 +103,7 @@ public class dashboard extends javax.swing.JFrame {
                 .addGap(59, 59, 59))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(logOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,7 +121,7 @@ public class dashboard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(logOutBtn)
                 .addGap(3, 3, 3)
                 .addComponent(jLabel2)
                 .addGap(55, 55, 55)
@@ -167,6 +174,16 @@ public class dashboard extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_transactionhistoryMouseClicked
 
+    private void logOutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutBtnMouseClicked
+        // TODO add your handling code here:
+        
+            System.out.println("Connection disable =d successfully");
+            loginpage ln = new loginpage();
+            ln.setVisible(true);
+            dispose();
+        
+    }//GEN-LAST:event_logOutBtnMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -205,8 +222,8 @@ public class dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Deposit;
     private javax.swing.JButton Withdraw;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel logOutBtn;
     private javax.swing.JButton makeTransfer;
     private javax.swing.JButton payBills;
     private javax.swing.JButton transactionhistory;

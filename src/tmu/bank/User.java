@@ -20,6 +20,11 @@ public class User {
     private String userID;
     private String userPassword;
 
+    public User(){
+        this.userUsername = "";
+        this.userEmail="";
+        this.userPassword ="";
+    }
     /**
      * Parameterized constructor which initialize the variable
      * @param userUsername
@@ -123,4 +128,5 @@ public class User {
       return dbcon.registerUser(this);
       
     }
+
 }
