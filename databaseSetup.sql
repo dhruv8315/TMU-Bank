@@ -34,4 +34,4 @@ CREATE TABLE interest_rates (
   account_type ENUM('Saving', 'Credit') NOT NULL,
   interest_rate DECIMAL(4, 3) NOT NULL,
   PRIMARY KEY (id)
-);
+)
