@@ -4,6 +4,8 @@ There is one sql scripts provided, it will create the database and create the ta
 
 databaseSetup.sql will create the tables, so the user can register themselves.
 
+Add the given jar file to build path of the project as external libraries.
+
 The app is configured to use the database with the following credentials:
 
 * Username: root
