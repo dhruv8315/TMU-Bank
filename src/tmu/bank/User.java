@@ -111,18 +111,25 @@ public class User {
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
     }
-    
-    /*
-    *   Check for existing user into database
-    */
+
+    /**
+     *  check if the argument entered is present in database or not
+     *  if present then it will redirect into dashboard else give message of invalid
+     *  input
+     * @return boolean value if the connection is successful
+     * else return false if connection is not successful
+     */
     public boolean login(){
         DatabaseCon dbcon = new DatabaseCon();
         return dbcon.loginUser(this);
     }
-    
-    /*
-    * register the new user into database
-    */
+
+    /**
+     *  enter new user to the database.
+     * @return boolean value if the connection is successful
+     * else return false if connection is not successful
+     */
+
     public boolean register(){
       DatabaseCon dbcon = new DatabaseCon();
       return dbcon.registerUser(this);
