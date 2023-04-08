@@ -134,7 +134,7 @@ public class billpayment extends javax.swing.JFrame {
 
         jLabel15.setText("CAD$=");
 
-        PayBillActiveBalance.setText("0000");
+        PayBillActiveBalance.setText("1000");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "Electricity", "Gas ", "Water", "Internet", "Credit Bill" }));
         jComboBox1.addMouseListener(new java.awt.event.MouseAdapter() {

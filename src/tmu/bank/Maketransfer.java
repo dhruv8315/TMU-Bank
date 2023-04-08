@@ -4,11 +4,16 @@
  */
 package com.mycompany.tmubank;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Kris
  */
 public class Maketransfer extends javax.swing.JFrame {
+
+    
+    
 
     /**
      * Creates new form Maketransfer
@@ -79,6 +84,11 @@ public class Maketransfer extends javax.swing.JFrame {
         TransferBTNSubmit.setBackground(new java.awt.Color(0, 204, 51));
         TransferBTNSubmit.setFont(new java.awt.Font("Georgia Pro Cond", 1, 18)); // NOI18N
         TransferBTNSubmit.setText("PAY");
+        TransferBTNSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TransferBTNSubmitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,6 +180,14 @@ public class Maketransfer extends javax.swing.JFrame {
         TransferBankName.setText(selectedValue);
     }//GEN-LAST:event_jComboBox1MouseClicked
 
+    private void TransferBTNSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransferBTNSubmitActionPerformed
+        // TODO add your handling code here:
+        if (TransferBTNSubmitActionPerformed()) {
+          System.out.println("Transfer Successful");
+          
+        }
+    }//GEN-LAST:event_TransferBTNSubmitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -223,4 +241,8 @@ public class Maketransfer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
+
+    private boolean TransferBTNSubmitActionPerformed() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
