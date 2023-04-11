@@ -85,21 +85,11 @@ public class Account {
         this.balance = amount;
         return dbcon.depositUser(this,this.U);
     }
-
-    /*
-    * withdraw the the given amount
-    */
-    public void withdraw(double amount) {
-        if(amount < balance){
-            balance -= amount;
-            Transaction transaction = new Transaction(amount, "Withdrawal");
-            transactionHistory.add(transaction);
-        }
-        else{
-            System.out.println("Withdraw failed due insufficient balance");
-            JOptionPane.showMessageDialog(null, "Withdraw failed due insufficient balance", "Title", 1);
-        }
-            
+    
+    public boolean withdraw(double amount){
+        DatabaseCon dbcon = new DatabaseCon();
+        this.balance = amount;
+        return dbcon.withdrawUser(this,this.U);
     }
 
     /*

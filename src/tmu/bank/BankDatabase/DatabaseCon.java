@@ -140,34 +140,37 @@ public class DatabaseCon {
     public boolean depositUser(Account a, User u){
         
         double amount = a.getBalance();
-        /*
-        int idNumber = 0;
-        String uname = u.getUserUsername();
-        String select = "SELECT user_id FROM users WHERE username = '"+uname+"';";
-        
-        try{
-            PreparedStatement st = con.prepareStatement(select);
-            ResultSet rs = st.executeQuery();
-            
-            if(rs.next()){
-                idNumber = rs.getInt("id");
-            }
-            else{
-                System.out.println("Something went wrong!");
-            }
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-        */
         System.out.println(amount);
         String update ="UPDATE bank_accounts SET balance = balance + "+ amount +" WHERE user_id = 11 ;";
         
         try {
             PreparedStatement st = con.prepareStatement(update);
 
-            //int changedRow = st.execute(update);
-            //System.out.println(st.execute(update));
+            if (!st.execute(update)) {
+                return true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return false;
+    }
+
+    /**
+     *
+     * @param a
+     * @param u
+     * @return true if the amount is deducted successfully
+     * else false is returned
+     */
+    public boolean withdrawUser(Account a, User u){
+        double amount = a.getBalance();
+        System.out.println(amount);
+        String update ="UPDATE bank_accounts SET balance = balance - "+ amount +" WHERE user_id = 11 ;";
+        try {
+            PreparedStatement st = con.prepareStatement(update);
+            
             if (!st.execute(update)) {
                 return true;
             }
