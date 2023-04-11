@@ -82,11 +82,8 @@ public class Account {
      */
     public boolean deposit(double amount){
         DatabaseCon dbcon = new DatabaseCon();
-        this.balance += amount;
-        Transaction transaction = new Transaction(amount,"Deposit");
-        this.transactionHistory.add(transaction);
-        
-        return dbcon.depositUser(this,getU());
+        this.balance = amount;
+        return dbcon.depositUser(this,this.U);
     }
 
     /*
