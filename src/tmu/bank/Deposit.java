@@ -202,8 +202,8 @@ public class Deposit extends javax.swing.JFrame {
         * chequing balance
         * else in saving balance.
         */
-        if(DepositChequingRadio.isSelected() == true){
            Account acc = new Account("Chequing");
+           
            if(acc.deposit(amountDouble) == true){
                 System.out.println("Deposited successfully!");
                 JOptionPane.showMessageDialog(null,"Deposited successfully!","Title",1);
@@ -212,18 +212,6 @@ public class Deposit extends javax.swing.JFrame {
                 System.out.println("Something went wrong!");
                 JOptionPane.showMessageDialog(null,"Something went wrong!","Error",1);
            }
-        }
-        else{
-            Account acc = new Account("Saving");
-            if(acc.deposit(amountDouble) == true){
-                System.out.println("Deposited successfully!");
-                JOptionPane.showMessageDialog(null,"Deposited successfully!","Title",1);
-           }
-           else{
-                System.out.println("Something went wrong!");
-                JOptionPane.showMessageDialog(null,"Something went wrong!","Error",1);
-           }
-        }
     }//GEN-LAST:event_DepositBTNSubmitActionPerformed
 
     private void PNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PNActionPerformed

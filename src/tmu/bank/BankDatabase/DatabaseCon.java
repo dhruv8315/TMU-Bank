@@ -140,7 +140,45 @@ public class DatabaseCon {
     public boolean depositUser(Account a, User u){
         
         double amount = a.getBalance();
-        String update ="";
+        System.out.println(amount);
+        String update ="UPDATE bank_accounts SET balance = balance + "+ amount +" WHERE user_id = 11 ;";
+        
+        try {
+            PreparedStatement st = con.prepareStatement(update);
+
+            if (!st.execute(update)) {
+                return true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return false;
+    }
+
+    /**
+     *
+     * @param a
+     * @param u
+     * @return true if the amount is deducted successfully
+     * else false is returned
+     */
+    public boolean withdrawUser(Account a, User u){
+        double amount = a.getBalance();
+        System.out.println(amount);
+        String update ="UPDATE bank_accounts SET balance = balance - "+ amount +" WHERE user_id = 11 ;";
+        try {
+            PreparedStatement st = con.prepareStatement(update);
+            
+            if (!st.execute(update)) {
+                return true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
         return false;
     }
     

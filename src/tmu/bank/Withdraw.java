@@ -4,6 +4,8 @@
  */
 package com.mycompany.tmubank;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Kris
@@ -52,6 +54,11 @@ public class Withdraw extends javax.swing.JFrame {
         jRadioButton1.setText("Chequing");
 
         WithdrawBTNSubmit.setText("WITHDRAW");
+        WithdrawBTNSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WithdrawBTNSubmitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,6 +115,23 @@ public class Withdraw extends javax.swing.JFrame {
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void WithdrawBTNSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WithdrawBTNSubmitActionPerformed
+        // TODO add your handling code here:
+        String withdraw = WithdrawTextField.getText();
+        double withdrawAmount = Double.parseDouble(withdraw);
+        
+        Account acc = new Account("Chequing");
+        
+        if(acc.withdraw(withdrawAmount) == true){
+            System.out.println("Withdraw successfully!");
+            JOptionPane.showMessageDialog(null,"Withdraw successfully!","Title",1);
+        }
+        else{
+            System.out.println("Something went wrong!");
+             JOptionPane.showMessageDialog(null,"Something went wrong!","Error",1);
+        }
+    }//GEN-LAST:event_WithdrawBTNSubmitActionPerformed
 
     /**
      * @param args the command line arguments

@@ -26,78 +26,70 @@ public class Account {
         this.balance = 0;
         this.transactionHistory = new ArrayList<>();
     }
-    
-    /*
-    * return the User class object
-    */
+
+    /**
+     *
+     * @return the user class object
+     */
     public User getU() {
         return U;
     }
 
-    /*
-    * set the User class object
-    * @params u 
-    */
+    /**
+     * set the user variable of this class to u
+     * @param u
+     */
     public void setU(User u) {
         this.U = u;
     }
 
-    /*
-    * return balance of the balance
-    */
+    /**
+     * this function return the balance of the account
+     * @return balance
+     */
     public double getBalance() {
         return balance;
     }
-    
-    /*
-    * set the balance 
-    */
+
+    /**
+     * set the balance of the account
+     * @param balance
+     */
     public void setBalance(double balance) {
         this.balance = balance;
     }
 
-    /*
-    * return transactionHistory arraylist
-    * that has transaction details.
-    */
+    /**
+     *
+     * @return transactionHistory arrayList
+     */
     public ArrayList<Transaction> getTransactionHistory() {
         return transactionHistory;
     }
 
-    /*
-    * set the transactionHistory
-    */
+    /**
+     * set the transactionHistory to its variable
+     * @param transactionHistory
+     */
     public void setTransactionHistory(ArrayList<Transaction> transactionHistory) {
         this.transactionHistory = transactionHistory;
     }
 
-    /*
-    * deposit the amount and return true if it is true
-    * as false
-    */
+    /**
+     *
+     * @param amount
+     * @return
+     */
     public boolean deposit(double amount){
         DatabaseCon dbcon = new DatabaseCon();
-        this.balance += amount;
-        Transaction transaction = new Transaction(amount,"Deposit");
-        this.transactionHistory.add(transaction);
-        
-        return dbcon.depositUser(this,getU());
+        this.balance = amount;
+        return dbcon.depositUser(this,this.U);
     }
-
-    /*
-    * withdraw the the given amount
-    */
-    public void withdraw(double amount) {
-        if(amount < balance){
-            balance -= amount;
-            Transaction transaction = new Transaction(amount, "Withdrawal");
-            transactionHistory.add(transaction);
-        }
-        else{
-            System.out.println("Withdraw failed due insufficient balance");
-            JOptionPane.showMessageDialog(null, "Withdraw failed due insufficient balance", "Title", 1);
-        }
-            
+    
+    public boolean withdraw(double amount){
+        DatabaseCon dbcon = new DatabaseCon();
+        this.balance = amount;
+        return dbcon.withdrawUser(this,this.U);
     }
 
     /*

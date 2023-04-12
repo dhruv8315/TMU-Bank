@@ -159,7 +159,7 @@ public class loginpage extends javax.swing.JFrame {
         String username = loginpageTextFeild.getText();
         String password = loginpagePasswordFeild.getText();
         User obj = new User(username,password);
-        
+        obj.setUserUsername(username);
         if(obj.login() == true){
             dashboard dss = new dashboard();
             dss.setVisible(true);
