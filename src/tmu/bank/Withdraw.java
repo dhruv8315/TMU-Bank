@@ -129,7 +129,7 @@ public class Withdraw extends javax.swing.JFrame {
         }
         else{
             System.out.println("Something went wrong!");
-             JOptionPane.showMessageDialog(null,"Something went wrong!","Error",1);
+            JOptionPane.showMessageDialog(null,"Something went wrong!","Error",1);
         }
     }//GEN-LAST:event_WithdrawBTNSubmitActionPerformed
 

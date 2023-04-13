@@ -182,9 +182,18 @@ public class Maketransfer extends javax.swing.JFrame {
 
     private void TransferBTNSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransferBTNSubmitActionPerformed
         // TODO add your handling code here:
-        if (TransferBTNSubmitActionPerformed()) {
-          System.out.println("Transfer Successful");
-          
+        String withdrawString = TransferAmount.getText();
+        double withdrawAmount = Double.parseDouble(withdrawString);
+        
+        Account acc = new Account("Chequing");
+        
+        if(acc.withdraw(withdrawAmount) == true){
+            System.out.println("Transfered successfully!");
+            JOptionPane.showMessageDialog(null,"Transfered "+withdrawAmount+" successfully!","Title",1);
+        }
+        else{
+            System.out.println("Something went wrong!");
+            JOptionPane.showMessageDialog(null,"Check your connection!","Error",1);
         }
     }//GEN-LAST:event_TransferBTNSubmitActionPerformed
 

@@ -60,6 +60,22 @@ public class Account {
     }
 
     /**
+     * get the account type of user
+     * @return
+     */
+    public String getAccountType() {
+        return accountType;
+    }
+
+    /**
+     * set the account type of the user
+     * @param accountType
+     */
+    public void setAccountType(String accountType) {
+
+        this.accountType = accountType;
+    }
+    /**
      *
      * @return transactionHistory arrayList
      */
@@ -109,21 +125,15 @@ public class Account {
         }
         
     }
-    
+
     /**
-     * get the account type of user
+     * make connection with database
+     * for checking balance of the account
      * @return
      */
-    public String getAccountType() {
-        return accountType;
-    }
-
-    /**
-     * set the account type of the user
-     * @param accountType
-     */
-    public void setAccountType(String accountType) {
-
-        this.accountType = accountType;
+    public double checkBalance(){
+        DatabaseCon dbcon = new DatabaseCon();
+        double amount = dbcon.checkBalanceUser(this,this.U);
+        return amount;
     }
 }

@@ -181,5 +181,31 @@ public class DatabaseCon {
         }
         return false;
     }
-    
+
+    /**
+     * fetch the balance from the database if the process is successful
+     * then return true
+     * else return false
+     * @param a
+     * @param u
+     * @return
+     */
+    public double checkBalanceUser(Account a, User u){
+        String selectQuery = "select balance from bank_accounts where user_id = 11;";
+
+        try{
+            PreparedStatement st = con.prepareStatement(selectQuery);
+            ResultSet rs = st.executeQuery();
+            if(rs.next()){
+                double amount = rs.getDouble("balance");
+                return amount;
+            }
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+        return 0;
+    }
 }
