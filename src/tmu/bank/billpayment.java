@@ -314,49 +314,19 @@ public class billpayment extends javax.swing.JFrame {
 
     private void PayBillBTNPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayBillBTNPayActionPerformed
         // TODO add your handling code here:
-        try{
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/banking","root","");
-        String amnt=PayBillAmount.getText();
-        int amntInt= Integer.parseInt(amnt);
-        String billerName=PayBillName.getText();
+        String withdraw = PayBillAmount.getText();
+        System.out.println(withdraw);
+        double withdrawAmount = Double.parseDouble(withdraw);
         
-        //To get the data in jTextfield from Mysql
-        String sql ="Select accountbalance from account where ID =1";
-        PreparedStatement ptst =conn.prepareStatement(sql);
-        ResultSet rs=ptst.executeQuery(sql);
-        if(rs.next()){
-        PayBillActiveBalance.setText(rs.getString("accountbalance"));
-        String accbalance= rs.getString("accountbalance");
-        int accbalanceInt= Integer.parseInt(accbalance);
+        Account acc = new Account("Chequing");
         
-        if (accbalanceInt >= amntInt){
-            int leftover=accbalanceInt-amntInt;
-            
-            String sql1 ="Update `account` SET `accountbalance`='"+leftover+"'";
-            PreparedStatement ptmt= conn.prepareStatement(sql1);
-            ptmt.execute();
-            
-            String sql2= "insert into paybills values(?,?,?)";
-            PreparedStatement pts= conn.prepareStatement(sql2);
-            pts.setString(1, PayBillName.getText());
-            pts.setString(2, PayBillAmount.getText());
-            pts.setString(3, datetime.getText());
-            pts.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Your"+billerName+" bill of amount "+amnt+" has been paid.");
-            
-        }        
-        else{
-            JOptionPane.showMessageDialog(null, "Your account balance is low that is only "+accbalanceInt+" , kindly recharge the account. ");
-        }
-        
+        if(acc.withdraw(withdrawAmount) == true){
+            System.out.println("Transaction successful successfully!");
+            JOptionPane.showMessageDialog(null,"Transaction successfully!","Title",1);
         }
         else{
-           
-            PayBillActiveBalance.setText("");
-        }
-        }catch(Exception e){
-           JOptionPane.showMessageDialog(null, "Error while establixhing the connection");
+            System.out.println("Something went wrong!");
+            JOptionPane.showMessageDialog(null,"Something went wrong!","Error",1);
         }
         
         
