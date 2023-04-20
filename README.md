@@ -1,4 +1,5 @@
 # TMU-Bank
+# Overview of the Project
 ### MySQL database setup
 There is one sql scripts provided, it will create the database and create the tables.
 
