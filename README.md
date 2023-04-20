@@ -1,5 +1,9 @@
 # TMU-Bank
 # Overview of the Project
+We have created an Online Banking System using Jforms for the frontend, Java for the Backend and MySql for the database. 
+The software allows the user to create an account, make cheque deposits, Interac/Transfer funds to another person, Pay bills and also Check their transaction history. 
+We used ApacheNetBeans to develop UI, IntelliJ to code for the backend and MySQL Workbench to create Databases. 
+Main Contributors:- Dhruv Patel and Kris Soni.
 ### MySQL database setup
 There is one sql scripts provided, it will create the database and create the tables.
 
